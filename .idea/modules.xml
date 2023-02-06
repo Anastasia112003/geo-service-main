@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/geo-service-main/geo-service.iml" filepath="$PROJECT_DIR$/geo-service-main/geo-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/geo-service-main.iml" filepath="$PROJECT_DIR$/.idea/geo-service-main.iml" />
     </modules>
   </component>
