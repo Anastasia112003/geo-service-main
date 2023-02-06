@@ -1,18 +1,15 @@
-package ru.netology;
+package ru.netology.sender;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.netology.entity.Country;
 import ru.netology.entity.Location;
-import ru.netology.geo.GeoService;
 import ru.netology.geo.GeoServiceImpl;
 import ru.netology.i18n.LocalizationServiceImpl;
-import ru.netology.sender.MessageSenderImpl;
-
 import java.util.HashMap;
 
-public class MessageSender {
+public class MessageSenderImplTest {
     @Test
     void russianMessage() {
         String ip = "172.0.0.0";
@@ -48,22 +45,5 @@ public class MessageSender {
         String preferences = messageSender.send(mapEng);
         String expected = "Welcome";
         Assertions.assertEquals(preferences, expected);
-    }
-
-    @Test
-    void locationByIpTest() {
-        String ip = "96.0.0.0";
-        Location expected = new Location("New York", Country.USA, " 10th Avenue", 32);
-        GeoService geoService = new GeoServiceImpl();
-        Location preferences = geoService.byIp(ip);
-        Assertions.assertEquals(expected.getCountry(), preferences.getCountry());
-    }
-
-    @Test
-    void localeTest() {
-        String expected = "Добро пожаловать";
-        String preferences = new LocalizationServiceImpl().locale(Country.RUSSIA);
-        Assertions.assertEquals(expected, preferences);
-
     }
 }
